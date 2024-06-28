@@ -2,7 +2,7 @@ require_relative '../lib/parser'
 
 
 RSpec.describe "Test Parser" do
-  let(:html) { File.read("./files/van_gogh_paintings.html") }
+  let(:html) { File.read("./files/van-gogh-paintings.html") }
   let(:doc) { Nokogiri::HTML(html) }
 
   describe "parser" do
