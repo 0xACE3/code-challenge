@@ -1,0 +1,25 @@
+{
+  "name": "SerpApiChallenge",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "castwide.solargraph",
+        "wingrunr21.vscode-ruby",
+        "kaiwood.endwise",
+        "aliariff.vscode-erb-beautify",
+        "vortizhe.simple-ruby-erb",
+        "miguel-savignano.ruby-symbols",
+        "formulahendry.code-runner"
+      ],
+      "settings": {
+        "ruby.useLanguageServer": true,
+        "solargraph.useBundler": false,
+        "solargraph.formatting": true
+      }
+    }
+  },
+  "remoteUser": "serpapi"
+}
