@@ -12,16 +12,16 @@ end
 def parse_artworks(doc)
     result = []
     paintings = doc.css('g-scrolling-carousel.wqBQjd > div > div > div')
+    images = get_images(doc)
     paintings.each do |painting|
-        result.append(extract(painting, doc))
+        result.append(extract(painting, images))
     end
 
     return result
 end
 
 
-def extract(painting, doc)
-    images = get_images(doc)
+def extract(painting, images)
     name = painting.css("a").attr("aria-label").value
     extensions = painting.css('div.ellip.klmeta').map(&:text)
     link = painting.css('a').attr('href').value
