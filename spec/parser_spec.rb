@@ -28,7 +28,8 @@ RSpec.describe "Test Parser" do
   describe "extract" do
     it "returns an artwork info from a carousel" do
       painting = doc.css('g-scrolling-carousel.wqBQjd > div > div > div').first
-      result = extract(painting, doc)
+      images = get_images(doc)
+      result = extract(painting, images)
       expect(result[:name]).to eq('The Starry Night')
       expect(result[:extensions]).to eq(["1889"])
       expect(result[:link]).to eq("https://www.google.com/search?gl=us&hl=en&q=The+Starry+Night&stick=H4sIAAAAAAAAAONgFuLQz9U3MI_PNVLiBLFMzC3jC7WUspOt9Msyi0sTc-ITi0qQmJnFJVbl-UXZxY8YI7kFXv64JywVMGnNyWuMXlxEaBJS4WJzzSvJLKkUkuLikYLbrcEgxcUF5_EsYhUIyUhVCC5JLCqqVPDLTM8oAQDmNFnDqgAAAA&npsic=0&sa=X&ved=0ahUKEwiL2_Hon4_hAhXNZt4KHTOAACwQ-BYILw")
