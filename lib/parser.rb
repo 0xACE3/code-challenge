@@ -11,12 +11,14 @@ end
 
 def parse_artworks(doc)
     result = []
-    paintings = doc.css('g-scrolling-carousel.wqBQjd > div > div > div')
+    paintings = doc.css('g-scrolling-carousel > div > div > div')
     images = get_images(doc)
+
     paintings.each do |painting|
+        next if painting.at_css('g-inner-card')
         result.append(extract(painting, images))
     end
-
+  
     return result
 end
 
